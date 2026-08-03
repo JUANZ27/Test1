@@ -1,0 +1,263 @@
+CURL PARA APIS STG
+
+crear perosna juridica crear PJ, processtraceid tiene que ser distinto para que se pueda crear, puede ser incremental o random
+curl --request POST \
+  --url https://eu2-ibk-apm-stg-ext-001.azure-api.net/business/v1/business-accounts/internal-channel \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNzU1ODE0NTg5LCJhdXRob3JpdGllcyI6WyJBTEwiXSwianRpIjoiMmU0ZjIzNjgtNTM1Ni00OWU0LTkwZmItNjQyZDAwODE4MDIxIiwiY2xpZW50X2lkIjoiQkNXIn0.6pDzje-P7WdRLiUd5bwpJsP135f8nQ1pIGbenPFLWkU' \
+  --header 'channel: DIGITAL' \
+  --header 'consumer-id: tfLWlHpvyA8SjNH3J9me5GcTKQlqIE4e' \
+  --header 'content-type: application/json' \
+  --header 'ocp-apim-subscription-key: 534cbfdafd7b438ba07cbaf250ff094d' \
+  --header 'processtraceid: 190423cimapjc1local041851266176' \
+  --data '{
+  "business": {
+    "identityDocument": {
+      "type": "RUC",
+      "number": "20101298851"
+    },
+    "businessName": "MANUFACTURAS SAN ISIDRO SAC",
+    "economicActivityCode": "2023",
+    "remainsCompany": "SI",
+    "societyType": "SA",
+    "registrationNumber": "77777777",
+    "constitutionDate": "2023-03-08",
+    "majorCustomers": "PERSONAS",
+    "sectorCode": "01",
+    "subSectorCode": "0101",
+    "affidavit": true,
+    "businessMagnitude": "6",
+    "phone": {
+      "number": "994328764"
+    },
+    "email": {
+      "type": "TRABAJO",
+      "value": "dpoloavi@gmail.com"
+    },
+    "address": {
+      "streetType": "ASENTAMIENTO_HUMANO",
+      "streetName": "LAS LOMAS",
+      "streetNumber": "789",
+      "department": "LIMA",
+      "district": "LIMA",
+      "province": "LIMA",
+      "apartment": "",
+      "block": "",
+      "landmark": "",
+      "lot": "",
+      "neighborhood": ""
+    },
+    "legalRepresentatives": [
+      {
+        "identityDocument": {
+          "type": "DNI",
+          "number": "57286094"
+        },
+        "firstName": "JULIAN",
+        "middleName": "ALEJANRA",
+        "lastName": "ALAVRO",
+        "motherLastName": "PEREDA",
+        "birthDate": "1970-08-08",
+        "gender": "MASCULINO",
+        "maritalStatus": "CASADO",
+        "email": {
+          "type": "PERSONAL",
+          "value": "dpoloavi@gmail.com"
+        },
+        "phone": {
+          "type": "CELULAR",
+          "number": "976241681",
+          "carrier": "CLARO"
+        },
+        "address": {
+          "department": "AMAZONAS",
+          "district": "CHACHAPOYAS",
+          "province": "CHACHAPOYAS",
+          "apartment": "A2",
+          "block": "",
+          "landmark": "",
+          "lot": "",
+          "streetName": "LOS ALAMOS",
+          "streetType": "CALLE",
+          "neighborhood": "",
+          "streetNumber": "895"
+        },
+        "configuration": {
+          "ldpd": {
+            "accept": true
+          },
+          "authentications": [
+            "OTP_SMS",
+            "BIOMETRIA"
+          ],
+          "customerPEP": {
+            "isPep": true,
+            "pepEntity": "Ministerio",
+            "pepPosition": "Ministro",
+            "pepStartDate": "2020-01-01",
+            "pepEndDate": "2025-01-01"
+          }
+        }
+      }
+    ],
+    "partners": [
+      {
+        "identityDocument": {
+          "type": "DNI",
+          "number": "45980242"
+        },
+        "isPep": true,
+        "pepEntity": "Ministerio de justicia",
+        "pepPosition": "Ministro",
+        "pepStartDate": "2020-01-01",
+        "pepEndDate": ""
+      },
+      {
+        "identityDocument": {
+          "type": "DNI",
+          "number": "88882083"
+        },
+        "isPep": true,
+        "pepEntity": "Ministerio de agricultura",
+        "pepPosition": "Ministro",
+        "pepStartDate": "2020-01-01",
+        "pepEndDate": "2022-01-01"
+      }
+    ]
+  },
+  "account": {
+    "currencyCode": [
+      "PEN",
+      "USD"
+    ],
+    "tariff": "DIGITAL"
+  },
+  "configuration": {
+    "store": {
+      "storeCode": "898"
+    },
+    "agency": {
+      "code": "731",
+      "name": "Tumbes, Tumbes"
+    },
+    "device": {
+      "type": "PC",
+      "deviceID": "52.167.75.123"
+    }
+  }
+}'
+
+
+
+crear persona natural CrearPN processtraceid tiene que ser distinto para que se pueda crear, puede ser incremental o random
+curl --request POST \
+  --url https://eu2-ibk-apm-stg-ext-001.azure-api.net/bcw-business-account/v1/business-accounts/internal-channel \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNzU1ODE0NTg5LCJhdXRob3JpdGllcyI6WyJBTEwiXSwianRpIjoiMmU0ZjIzNjgtNTM1Ni00OWU0LTkwZmItNjQyZDAwODE4MDIxIiwiY2xpZW50X2lkIjoiQkNXIn0.6pDzje-P7WdRLiUd5bwpJsP135f8nQ1pIGbenPFLWkU' \
+  --header 'channel: DIGITAL' \
+  --header 'consumer-id: tfLWlHpvyA8SjNH3J9me5GcTKQlqIE4e' \
+  --header 'content-type: application/json' \
+  --header 'ocp-apim-subscription-key: 534cbfdafd7b438ba07cbaf250ff094d' \
+  --header 'processtraceid: 190423cimapjc1local041850267155' \
+  --data '{
+  "business": {
+    "identityDocument": {
+      "type": "RUC",
+      "number": "10294411491"
+    },
+    "businessName": "CARHUALLANQUI HUARCAYA JESUS",
+    "sectorCode": "06",
+    "subSectorCode": "0603",
+    "taxPeru": "NO",
+    "fiscalResidence": {
+      "countryName": "COLOMBIA",
+      "cityName": "Cali",
+      "legalAddress": "Las Begonias",
+      "tributaryNumber": "14545454545454"
+    },
+    "legalRepresentatives": [
+      {
+        "customerID": "0062022433",
+        "identityDocument": {
+          "type": "DNI",
+          "number": "29441149"
+        },
+        "firstName": "JESUS",
+        "middleName": "",
+        "lastName": "CARHUALLANQUI",
+        "motherLastName": "HUARCAYA",
+        "birthDate": "1986-04-10",
+        "gender": "MASCULINO",
+        "maritalStatus": "SOLTERO",
+        "isPep": true,
+        "pepEntity": "PRUEBAS QA",
+        "pepPosition": "PRuebas qa",
+        "pepStartDate": "15/12/2021",
+        "pepEndDate": "15/12/2024",
+        "email": {
+          "type": "PERSONAL",
+          "value": "10294411491@YOPMAIL.COM"
+        },
+        "phone": {
+          "type": "CELULAR",
+          "carrier": "CLARO",
+          "number": "943123213"
+        },
+        "address": {
+          "department": "LIMA",
+          "district": "ATE",
+          "province": "LIMA",
+          "streetType": "AVENIDA",
+          "streetName": "123",
+          "streetNumber": "123",
+          "block": "",
+          "lot": "",
+          "apartment": ""
+        },
+        "configuration": {
+          "ldpd": {
+            "accept": true
+          },
+          "customerPEP": {
+            "accept": true
+          },
+          "bpie": {
+            "accept": false
+          },
+          "authentications": [
+            "OTP_SMS",
+            "BIOMETRIA"
+          ]
+        }
+      }
+    ]
+  },
+  "account": {
+    "tariff": "DIGITAL",
+    "currencyCode": [
+      "PEN",
+      "USD"
+    ]
+  },
+  "configuration": {
+    "store": {
+      "storeCode": "898"
+    },
+    "agency": {
+      "code": "300",
+      "name": "Arequipa, Arequipa"
+    },
+    "device": {
+      "type": "PC",
+      "deviceID": "10.244.50.17"
+    }
+  }
+}'
+
+ConsultaFULL
+curl --request GET \
+  --url 'https://eu2-ibk-apm-stg-ext-001.azure-api.net/vision-cliente/uat/customers/full?identityDocumentType=RUC&identityDocumentNumber=20188121676' \
+  --header 'application: ASSI' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNzI5NzkyOTAzLCJhdXRob3JpdGllcyI6WyJBTEwiXSwianRpIjoiNzU0Njg3YjMtMWNkNC00YWUyLWIxM2QtYWMxZjVhZjcyMGU0IiwiY2xpZW50X2lkIjoiQkNXIn0.NfjBFgQ7CkjYVn0O7-UAlAveckZir_yFpbqE9nLNbvo' \
+  --header 'company: INTERBANK' \
+  --header 'ocp-apim-subscription-key: 534cbfdafd7b438ba07cbaf250ff094d' \
+  --header 'storecode: 100' \
+  --header 'user: XT10023'
