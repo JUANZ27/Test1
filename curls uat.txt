@@ -119,13 +119,13 @@ curl --request POST \
   --header 'usertype: F' \
   --data '{
   "documentTypeId": "2",
-  "documentNumber": "20896265572",
+  "documentNumber": "20276135814",
   "accountsExecutiveId": "11126",
-  "countryCode": "2023",
+  "countryCode": "4028",
   "company": {
     "companyName": "ARICA",
     "constitutionDate": "20101204",
-    "economicActivityCode": "1520",
+    "economicActivityCode": "2023",
     "economicGroupCode": "0001",
     "mainActivity": "Prestampos",
     "tradeName": "Caja Arequipa",
@@ -135,7 +135,7 @@ curl --request POST \
     "businessMagnitude": "1"
   },
   "standardizedAddress": {
-    "streetType": "AV",
+    "streetType": "JR",
     "streetName": "Catalino Miranda",
     "streetNumber": "154",
     "blockIdentification": "1",
@@ -145,7 +145,7 @@ curl --request POST \
     "landmark": "Altura Javier Prado",
     "department": "Lima",
     "province": "Lima",
-    "district": "Lima"
+    "district": "Barranco"
   },
   "contact": {
     "phoneAddress": {
