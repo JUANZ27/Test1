@@ -1,0 +1,191 @@
+curls uat
+
+token 
+
+consulta
+curl --request POST \
+  --url https://apic-gw-com.apps.ocpsbx.integracion.grupoib.local/ibk-uat/int-com-uat/oauthproviderh1/oauth2/token \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data grant_type=password \
+  --data username=uBseGenPrd \
+  --data 'password=Ibk$2018' \
+  --data 'client_id={{ifx_client_id}}' \
+  --data 'client_secret={{ifx_client_secret}}' \
+  --data 'scope={{ifx_scope_consulta}}'
+  
+trasaccion
+curl --request POST \
+  --url https://apic-gw-com.apps.ocpsbx.integracion.grupoib.local/ibk-uat/int-com-uat/oauthproviderh1/oauth2/token \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data grant_type=password \
+  --data username=uBseGenPrd \
+  --data 'password=Ibk$2018' \
+  --data 'client_id={{ifx_client_id}}' \
+  --data 'client_secret={{ifx_client_secret}}' \
+  --data 'scope={{ifx_scope_transaccion}}'
+
+endpoints
+
+crear cliente PN
+curl --request POST \
+  --url http:///%7B%7Bbaseurlapic%7D%7D/party-reference-data-directory-customer/v1/customer/create \
+  --header 'accept: application/json' \
+  --header 'authorization: {{ifx_access_token_transaccion}}' \
+  --header 'branchid: 100' \
+  --header 'channelid: 16' \
+  --header 'consumerid: BPE' \
+  --header 'content-type: application/json' \
+  --header 'deviceid: 192.135.183.250' \
+  --header 'funcionalidadid: Funcionalidad IFX' \
+  --header 'iporigen: 192.135.183.200' \
+  --header 'ocp-apim-subscription-key: {{ifx_client_id}}' \
+  --header 'ocp-apim-subscription-secret: {{ifx_client_secret}}' \
+  --header 'parentid: 11a7f97345' \
+  --header 'timestamp: 2016-05-24T11:57:48.000Z' \
+  --header 'traceid: 34338b0e6d2271c2345' \
+  --header 'userid: S7301' \
+  --header 'x-global-transaction-id: 20160623152105' \
+  --data '{
+  "documentTypeId": "1",
+  "documentNumber": "40903470",
+  "passportNumber": "",
+  "birthDate": "1980-12-12",
+  "firstLastName": "MONTENEGRO",
+  "secondLastName": "RIVAS",
+  "firstName": "ISABEL",
+  "secondName": "MARIA",
+  "genderType": "M",
+  "maritalStatus": "S",
+  "nationalityCode": "0",
+  "birthCountryCode": "4028",
+  "residentCountryCode": "4028",
+  "nationalityCountryCode": "4028",
+  "streetType": "AV",
+  "streetName": "MARINA",
+  "streetNumber": "17",
+  "blockIdentification": "8",
+  "lotId": "G",
+  "insideId": "3",
+  "urbanizationName": "",
+  "locationReference": "",
+  "department": "CAJAMARCA",
+  "province": "CAJAMARCA",
+  "district": "CAJAMARCA",
+  "phoneAddress": [
+    {
+      "phoneType": "CELULAR",
+      "phonePrefix": "051",
+      "phoneNumber": "958595853",
+      "extension": "123"
+    }
+  ],
+  "emailType": "P",
+  "email": "70562659g@gmail.com",
+  "ciiuCode": "",
+  "employmentDate": "",
+  "companyName": "SYNOPSIS",
+  "ocupationCode": "PRF"
+}'
+
+crear CLIENTE PJ
+curl --request POST \
+  --url http:///%7B%7Bbaseurlapic%7D%7D/party-reference-data-directory-merchant/v1//create-customer/execute \
+  --header 'accept: application/json' \
+  --header 'application: ASSI' \
+  --header 'authorization: {{ifx_access_token_transaccion}}' \
+  --header 'branchid: 898' \
+  --header 'cardidtype: 1' \
+  --header 'channelid: 15' \
+  --header 'consumerid: 01' \
+  --header 'content-type: application/json' \
+  --header 'countrycode: PE' \
+  --header 'deviceid: 130.30.20.80' \
+  --header 'funcionalidadid: funcionalidad01' \
+  --header 'groupmember: G0001' \
+  --header 'iporigen: 130.30.20.80' \
+  --header 'messageid: 20160623152105' \
+  --header 'moduloid: modcontacto' \
+  --header 'netid: BI' \
+  --header 'ocp-apim-subscription-key: {{ifx_client_id}}' \
+  --header 'ocp-apim-subscription-secret: {{ifx_client_secret}}' \
+  --header 'parentid: 53ce929d0e0e4736' \
+  --header 'referencenumber: REF01092' \
+  --header 'serverid: server12' \
+  --header 'serviceid: BIP' \
+  --header 'supervisorid: S2058' \
+  --header 'timestamp: 2016-05-24T11:57:48.000Z' \
+  --header 'traceid: 53ce929d0e0e4736' \
+  --header 'userid: S23052' \
+  --header 'usertype: F' \
+  --data '{
+  "documentTypeId": "2",
+  "documentNumber": "20896265572",
+  "accountsExecutiveId": "11126",
+  "countryCode": "2023",
+  "company": {
+    "companyName": "ARICA",
+    "constitutionDate": "20101204",
+    "economicActivityCode": "1520",
+    "economicGroupCode": "0001",
+    "mainActivity": "Prestampos",
+    "tradeName": "Caja Arequipa",
+    "companyNameAcronym": "Arequipa",
+    "societyType": "EIRL",
+    "profitFlag": "Y",
+    "businessMagnitude": "1"
+  },
+  "standardizedAddress": {
+    "streetType": "AV",
+    "streetName": "Catalino Miranda",
+    "streetNumber": "154",
+    "blockIdentification": "1",
+    "lotNumber": "154",
+    "insideNumber": "1",
+    "urbanization": "Barranco",
+    "landmark": "Altura Javier Prado",
+    "department": "Lima",
+    "province": "Lima",
+    "district": "Lima"
+  },
+  "contact": {
+    "phoneAddress": {
+      "useCode": "C",
+      "prefix": "051",
+      "phoneNumber": "909298641",
+      "extension": "12345"
+    },
+    "electronicAddress": {
+      "useCode": "T",
+      "emailAddress": "JDEVELOPER@NET.COM.PE"
+    }
+  }
+}'
+
+consulta FULL
+curl --request POST \
+  --url http:///%7B%7Bbaseurlapic%7D%7D/en-party-reference-data-directory-customer/v2/full-information/retrieve \
+  --header 'accept: application/json' \
+  --header 'authorization: {{ifx_access_token_consulta}}' \
+  --header 'consumerid: BCV' \
+  --header 'content-type: application/json' \
+  --header 'funcionalidadid: funcionalidad01' \
+  --header 'ocp-apim-subscription-key: {{ifx_client_id}}' \
+  --header 'ocp-apim-subscription-secret: {{ifx_client_secret}}' \
+  --header 'parentid: 53ce929d0e0e4736' \
+  --header 'traceid: 53ce929d0e0e4736' \
+  --header 'usertype: F' \
+  --data '{
+  "searchCriteria": "5",
+  "identificationDocumentType": "1",
+  "identificationDocumentNumber": "40903470",
+  "cardId": "",
+  "customerAccount": {
+    "organisationId": "",
+    "currencyCode": "",
+    "categoryCode": "",
+    "account": {
+      "branchCode": "",
+      "accountNumber": ""
+    }
+  }
+}'
