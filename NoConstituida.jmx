@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments">You can run me using: jmeter -Jthreads=&lt;Number of threads&gt; -Jrampup=&lt;rampup in seconds&gt; -Jduration=&lt;duration in seconds&gt; -Jiterations=&lt;Number of iterations, -1 means infinite&gt; -e -o &lt;report output folder&gt;</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">4</stringProp>
+        <stringProp name="ThreadGroup.ramp_time"></stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">3600</stringProp>
+        <stringProp name="ThreadGroup.delay">5</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">50</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="expedientNumber" elementType="Argument">
+              <stringProp name="Argument.name">expedientNumber</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="legalDocumentNumber" elementType="Argument">
+              <stringProp name="Argument.name">legalDocumentNumber</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="documentNumber" elementType="Argument">
+              <stringProp name="Argument.name">documentNumber</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="dniSecuencia" elementType="Argument">
+              <stringProp name="Argument.name">dniSecuencia</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="dniSecuencia" enabled="false">
+          <stringProp name="CounterConfig.start">40320101</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">dniSecuencia</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP CookieManager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:11:36.1357712</stringProp>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="TOKEN SECURITY" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">eu2-ibk-apm-stg-ext-001.azure-api.net</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bcv-security/v1/oauth/token</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:45:17.4473937</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="authorization" elementType="Header">
+                <stringProp name="Header.name">authorization</stringProp>
+                <stringProp name="Header.value">Basic TU1QX0JDVjopd3Z3aGliak1PMXtzJ3Ek</stringProp>
+              </elementProp>
+              <elementProp name="content-type" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+              <elementProp name="ocp-apim-subscription-key" elementType="Header">
+                <stringProp name="Header.name">ocp-apim-subscription-key</stringProp>
+                <stringProp name="Header.value">0e62f13879b145489c7be8c9d21ccc97</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">grant_type</stringProp>
+                <stringProp name="Header.value">client_credentials</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:45:17.4473937</stringProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">TOKEN_NOT_FOUND</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">int valorActual = Integer.parseInt(vars.get(&quot;dniSecuencia&quot;));
+vars.put(&quot;dniSecuencia&quot;, String.valueOf(valorActual + 1));</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CREACION DE EXPEDIENTE" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;requestType&quot;: &quot;INCORPORATION_IN_PROGRESS&quot;,&#xd;
+  &quot;store&quot;: {&#xd;
+    &quot;storeCode&quot;: &quot;898&quot;&#xd;
+  },&#xd;
+  &quot;legalEntity&quot;: {&#xd;
+    &quot;ruc&quot;: null,&#xd;
+    &quot;ciiu&quot;: &quot;5629&quot;,&#xd;
+    &quot;taxPayerType&quot;: &quot;EMPRESA INDIVIDUAL DE RESP. LTDA&quot;&#xd;
+  },&#xd;
+  &quot;legalRepresentatives&quot;: [&#xd;
+    {&#xd;
+      &quot;documentType&quot;: &quot;1&quot;,&#xd;
+      &quot;documentNumber&quot;: &quot;70562659&quot;&#xd;
+    }&#xd;
+  ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">eu2-ibk-apm-stg-ext-001.azure-api.net</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bcv-bacc-party-lifecycle-management/v1/business-account/initial-validation</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:11:36.1332665</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="authorization" elementType="Header">
+                <stringProp name="Header.name">authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+              </elementProp>
+              <elementProp name="content-type" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="ocp-apim-subscription-key" elementType="Header">
+                <stringProp name="Header.name">ocp-apim-subscription-key</stringProp>
+                <stringProp name="Header.value">0e62f13879b145489c7be8c9d21ccc97</stringProp>
+              </elementProp>
+              <elementProp name="x-trace-id" elementType="Header">
+                <stringProp name="Header.name">x-trace-id</stringProp>
+                <stringProp name="Header.value">b6735999dc71f5c23a66a3fc6079ca9b</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:11:36.1337675</stringProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">expedientNumber</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.expedientNumber</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">ERROR</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">def expediente = vars.get(&quot;expedientNumber&quot;)
+def ultimos4 = expediente.substring(expediente.length() - 4)
+def documentNumber = &quot;B000&quot; + ultimos4
+vars.put(&quot;documentNumber&quot;, documentNumber)</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">def expediente = vars.get(&quot;expedientNumber&quot;)
+def ultimos4 = expediente.substring(expediente.length() - 4)
+def documentNumber = &quot;B000&quot; + ultimos4
+vars.put(&quot;documentNumber&quot;, documentNumber)</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">expedientNumber</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.expedientNumber</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">ERROR</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="APERTURA DE CUENTA" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+   &quot;expedientNumber&quot;:&quot;${expedientNumber}&quot;,&#xd;
+   &quot;person&quot;:{&#xd;
+      &quot;type&quot;:&quot;INCORPORATION_IN_PROGRESS&quot;,&#xd;
+      &quot;documentType&quot;:&quot;6&quot;,&#xd;
+      &quot;documentNumber&quot;:&quot;${documentNumber}&quot;,&#xd;
+      &quot;name&quot;:&quot;EMPRESAA MINSTRAL&quot;,&#xd;
+      &quot;societyType&quot;:&quot;EIRL&quot;,&#xd;
+      &quot;constitutionDate&quot;:&quot;2000-12-12&quot;,&#xd;
+      &quot;constituted&quot;:&quot;NO&quot;,&#xd;
+      &quot;sectorCode&quot;:&quot;01&quot;,&#xd;
+      &quot;subSectorCode&quot;:&quot;0101&quot;,&#xd;
+      &quot;ciiu&quot;:&quot;5629&quot;,&#xd;
+      &quot;email&quot;:{&#xd;
+         &quot;type&quot;:&quot;P&quot;,&#xd;
+         &quot;value&quot;:&quot;qainterbank01@yopmail.com&quot;&#xd;
+      },&#xd;
+      &quot;phone&quot;:{&#xd;
+         &quot;type&quot;:&quot;C&quot;,&#xd;
+         &quot;value&quot;:&quot;958595853&quot;&#xd;
+      },&#xd;
+      &quot;address&quot;:{&#xd;
+         &quot;department&quot;:&quot;LIMA&quot;,&#xd;
+         &quot;province&quot;:&quot;LIMA&quot;,&#xd;
+         &quot;district&quot;:&quot;LIMA&quot;,&#xd;
+         &quot;streetType&quot;:&quot;AV&quot;,&#xd;
+         &quot;streetName&quot;:&quot;MARINA&quot;,&#xd;
+         &quot;streetNumber&quot;:&quot;2&quot;,&#xd;
+         &quot;blockIdentification&quot;:&quot;O&quot;,&#xd;
+         &quot;lotNumber&quot;:&quot;&quot;,&#xd;
+         &quot;urbanization&quot;:&quot;&quot;,&#xd;
+         &quot;landmark&quot;:&quot;&quot;&#xd;
+      },&#xd;
+      &quot;legalRepresentatives&quot;:[&#xd;
+         {&#xd;
+            &quot;documentType&quot;:&quot;1&quot;,&#xd;
+            &quot;documentNumber&quot;:&quot;70562659&quot;,&#xd;
+            &quot;firstName&quot;:&quot;ALEX&quot;,&#xd;
+            &quot;middleName&quot;:&quot;MIGUEL&quot;,&#xd;
+            &quot;lastName&quot;:&quot;SALAZAR&quot;,&#xd;
+            &quot;motherLastName&quot;:&quot;ROMERO&quot;,&#xd;
+            &quot;birthDate&quot;:&quot;2000-12-12&quot;,&#xd;
+            &quot;gender&quot;:&quot;M&quot;,&#xd;
+            &quot;maritalStatus&quot;:&quot;U&quot;,&#xd;
+            &quot;nationalityCode&quot;:&quot;0&quot;,&#xd;
+            &quot;birthCountryCode&quot;:&quot;4028&quot;,&#xd;
+            &quot;residentCountryCode&quot;:&quot;4028&quot;,&#xd;
+            &quot;nationalityCountryCode&quot;:&quot;4028&quot;,&#xd;
+            &quot;companyName&quot;:&quot;EMPRESAA MINSTRAL&quot;,&#xd;
+            &quot;ocupationCode&quot;:&quot;PRF&quot;,&#xd;
+            &quot;email&quot;:{&#xd;
+               &quot;type&quot;:&quot;P&quot;,&#xd;
+               &quot;value&quot;:&quot;qainterbank01@yopmail.com&quot;&#xd;
+            },&#xd;
+            &quot;phone&quot;:{&#xd;
+               &quot;type&quot;:&quot;C&quot;,&#xd;
+               &quot;value&quot;:&quot;958595853&quot;,&#xd;
+               &quot;carrier&quot;:&quot;ENTEL&quot;&#xd;
+            },&#xd;
+            &quot;address&quot;:{&#xd;
+               &quot;department&quot;:&quot;LIMA&quot;,&#xd;
+               &quot;province&quot;:&quot;LIMA&quot;,&#xd;
+               &quot;district&quot;:&quot;LIMA&quot;,&#xd;
+               &quot;streetType&quot;:&quot;AV&quot;,&#xd;
+               &quot;streetName&quot;:&quot;MARINA&quot;,&#xd;
+               &quot;streetNumber&quot;:&quot;2&quot;,&#xd;
+               &quot;blockIdentification&quot;:&quot;O&quot;,&#xd;
+               &quot;lotNumber&quot;:&quot;&quot;,&#xd;
+               &quot;urbanization&quot;:&quot;&quot;,&#xd;
+               &quot;landmark&quot;:&quot;&quot;&#xd;
+            },&#xd;
+            &quot;isPep&quot;:false,&#xd;
+            &quot;additionalRl&quot;:false,&#xd;
+            &quot;ldpd&quot;:{&#xd;
+               &quot;accept&quot;:false&#xd;
+            },&#xd;
+            &quot;authentications&quot;:[&#xd;
+               &quot;BIOMETRIA&quot;,&#xd;
+               &quot;OTP_CORREO&quot;&#xd;
+            ]&#xd;
+         }&#xd;
+      ]&#xd;
+   },&#xd;
+   &quot;account&quot;:{&#xd;
+      &quot;currencyCode&quot;:[&#xd;
+         &quot;PEN&quot;&#xd;
+      ],&#xd;
+      &quot;tariff&quot;:&quot;DIGITAL&quot;&#xd;
+   },&#xd;
+   &quot;store&quot;:{&#xd;
+      &quot;storeCode&quot;:&quot;898&quot;&#xd;
+   },&#xd;
+   &quot;configuration&quot;:{&#xd;
+      &quot;agency&quot;:{&#xd;
+         &quot;code&quot;:&quot;200&quot;,&#xd;
+         &quot;name&quot;:&quot;Lima, Lima&quot;&#xd;
+      },&#xd;
+      &quot;device&quot;:{&#xd;
+         &quot;type&quot;:&quot;PC&quot;,&#xd;
+         &quot;deviceID&quot;:&quot;163.116.229.28&quot;&#xd;
+      }&#xd;
+   }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">eu2-ibk-apm-stg-ext-001.azure-api.net</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bcv-bacc-party-lifecycle-management/v1/business-account</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:18:23.867973</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="authorization" elementType="Header">
+                <stringProp name="Header.name">authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${access_token}</stringProp>
+              </elementProp>
+              <elementProp name="content-type" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="ocp-apim-subscription-key" elementType="Header">
+                <stringProp name="Header.name">ocp-apim-subscription-key</stringProp>
+                <stringProp name="Header.value">0e62f13879b145489c7be8c9d21ccc97</stringProp>
+              </elementProp>
+              <elementProp name="Channel" elementType="Header">
+                <stringProp name="Header.name">Channel</stringProp>
+                <stringProp name="Header.value">DIGITAL</stringProp>
+              </elementProp>
+              <elementProp name="Consumer-Id" elementType="Header">
+                <stringProp name="Header.name">Consumer-Id</stringProp>
+                <stringProp name="Header.value">ELhZrjaJHLXCCoq8u6YTxFVtTnfh3l1C</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Created from cURL on 2026-06-22T12:18:23.8689711</stringProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\S44300\OneDrive - Interbank\Escritorio\PROYECTO ASSI COMERCIAL - HYPER\PruebasRendimiento\NuevoOrqCnNoConstituida\ResultCnNoConstituida</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Reporte resumen" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\S44300\OneDrive - Interbank\Escritorio\PROYECTO ASSI COMERCIAL - HYPER\PruebasRendimiento\NuevoOrqCnNoConstituida\View Results Tree.jmx</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
