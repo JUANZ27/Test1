@@ -1,0 +1,321 @@
+
+
+:\auto\playwright\t2\pj-jmeter-playwright-performance-bdd-ts-v3> npm run test:performance:carga
+
+> pj-jmeter-playwright-performance-bdd-ts@3.1.0 test:performance:carga
+> cross-env PERF_TEST_TYPE=CARGA cucumber-js --tags @Carga
+
+This Node.js version (v24.15.0) has not been tested with this version of Cucumber; it should work normally, but please raise an issue if you see anything unexpected.
+`publishQuiet` option is no longer needed, you can remove it from your configuration; see https://github.com/cucumber/cucumber-js/blob/main/docs/deprecations.md
+[2026-08-19T02:49:32.342Z] [Ejecutar prueba de carga del flujo PJ constituida] Inicio de escenario en ambiente stg
+[2026-08-19T02:49:32.348Z] [CONFIG] Ambiente solicitado en feature: stg. Ambiente efectivo .env: stg
+[2026-08-19T02:49:32.350Z] [PerformancePJ] Inicio flujo=PJ_CONSTITUIDA tipo=CARGA VUS=1 ramp=1s duración=10s thinkTime=0ms
+[2026-08-19T02:49:32.356Z] [FlujoCompletoPJ] Inicio de flujo constituida migrado desde PJ.jmx
+[2026-08-19T02:49:34.115Z] [TokenPJ] HTTP Status: 200
+[2026-08-19T02:49:34.117Z] [TokenPJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:34.119Z] [TokenPJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:34.120Z] [TokenPJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:34.122Z] [TokenPJ] response.headers
+{
+  "content-type": "application/json",
+  "date": "Wed, 19 Aug 2026 02:49:24 GMT",
+  "server": "nginx",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-cache, no-store, max-age=0, must-revalidate, no-cache",
+  "expires": "0",
+  "pragma": "no-cache",
+  "transfer-encoding": "chunked",
+  "x-xss-protection": "0",
+  "x-frame-options": "DENY",
+  "x-trace-id": "05820b4e0a6f48f2983029f0dfa22dde",
+  "x-span-id": "0a751f477efe4c25",
+  "x-content-type-options": "nosniff",
+  "processtraceid": "gen-05820b4e0a6f48f2983029f0dfa22dde"
+}
+[2026-08-19T02:49:34.125Z] [TokenPJ] response.body
+{
+  "access_token": "eyJraWQiOiJhYjEyYjUxZC1lNzIxLTQ2ZTYtYTExMS02N2ZiMzEwOTM2OGMiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJCQ1YiLCJhdWQiOiJCQ1YiLCJuYmYiOjE3ODcxMDc3NjQsInNjb3BlIjpbImFsbCJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJleHAiOjE3ODcxMzY1NjQsImlhdCI6MTc4NzEwNzc2NCwianRpIjoiYzc4NWYwNmYtZjRkMC00YWYzLWI3MGUtNWFlYzJlODBmZjIwIiwiYXV0aG9yaXRpZXMiOlsiQUxMIl0sImNsaWVudF9pZCI6IkJDViJ9.Chphjwe7lZy6VR4GsoFYUYbeRpAZ2yrX4DVJxR7tNd1_FL9Lpt-nyIvPo8yIGg5mDw2yjzuYzK7p3_2mS4uIBec7myCLLEUckkCS9iA16e3ZIBscEgTpDOub4saoUCAa24ngUg2nXBeQ6FxXV5BZJNNb2j3_0OiGsVhqUYtEhab8QDcoisUqrzkiohBb7TXrYGSn8pViGsWZAW9YL22MZEzc5Zn34l5zJk8zmyro5Oe-pr6yvPlPMBawPMMow3a6Z8Ze-WXkxdYpCu19wjx85lFExlAGZvlbwjO-5PQbfaNeHSpre2cAxwFNZv6sZQCbmk0mBzmaZqgm8kAJmKGTgA",
+  "token_type": "Bearer",
+  "expires_in": "28800"
+}
+[2026-08-19T02:49:35.984Z] [CompliancePJ] HTTP Status: 200
+[2026-08-19T02:49:35.986Z] [CompliancePJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:35.988Z] [CompliancePJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:35.990Z] [CompliancePJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:35.992Z] [CompliancePJ] response.headers
+{
+  "content-type": "application/json;charset=UTF-8",
+  "date": "Wed, 19 Aug 2026 02:49:26 GMT",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-store, no-cache, must-revalidate",
+  "x-content-type-options": "nosniff",
+  "x-trace-id": "b6735999dc71f5c23a66a3fc6079ca9b",
+  "x-span-id": "f4fe17d3ccd2493a",
+  "processtraceid": "gen-b6735999dc71f5c23a66a3fc6079ca9b",
+  "x-correlation-id": "5928b883-bf57-4a69-8366-0570cf284cd0",
+  "x-frame-options": "DENY",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-length": "144"
+}
+[2026-08-19T02:49:35.994Z] [CompliancePJ] response.body
+{
+  "expedientNumber": "B000000000013900",
+  "status": "COMPLETED",
+  "statusDetail": "All required data has been successfully validated",
+  "requiredData": []
+}
+[2026-08-19T02:49:37.368Z] [Ejecutar prueba de carga del flujo PJ constituida] Resultado Cucumber: FAILED
+Failures:
+
+1) Scenario: Ejecutar prueba de carga del flujo PJ constituida # src\test\features\pj-jmeter-migration.feature:74
+   √ Before # src\support\hooks.ts:9
+   √ Dado que uso la configuración del ambiente "stg" # src\test\steps\pj.steps.ts:27
+   × Cuando ejecuto performance tipo "CARGA" del flujo PJ con 1 usuarios durante 10 segundos # src\test\steps\pj.steps.ts:84
+       Error: function timed out, ensure the promise resolves within 5000 milliseconds
+           at Timeout.<anonymous> (C:\auto\playwright\t2\pj-jmeter-playwright-performance-bdd-ts-v3\node_modules\@cucumber\cucumber\src\time.ts:52:14)
+           at listOnTimeout (node:internal/timers:605:17)
+           at processTimers (node:internal/timers:541:7)
+   - Entonces se genera el resumen de performance en el reporte # src\test\steps\pj.steps.ts:156
+   - Y el informe de performance debe contener tps percentiles dispersión y decisión # src\test\steps\pj.steps.ts:162
+   √ After # src\support\hooks.ts:16
+
+1 scenario (1 failed)
+4 steps (1 failed, 2 skipped, 1 passed)
+0m05.043s (executing steps: 0m05.025s)
+[2026-08-19T02:49:41.336Z] [AperturaPJ] HTTP Status: 200
+[2026-08-19T02:49:41.339Z] [AperturaPJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:41.341Z] [AperturaPJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:41.343Z] [AperturaPJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:41.345Z] [AperturaPJ] response.headers
+{
+  "content-type": "application/json;charset=UTF-8",
+  "date": "Wed, 19 Aug 2026 02:49:32 GMT",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-store, no-cache, must-revalidate",
+  "x-content-type-options": "nosniff",
+  "x-trace-id": "afc1a602ee6a4136a8605d4691a3add4",
+  "x-span-id": "31a5aab7a4204f19",
+  "processtraceid": "gen-afc1a602ee6a4136a8605d4691a3add4",
+  "x-correlation-id": "229c36d1-93be-484d-8939-d3e8b82eed57",
+  "x-frame-options": "DENY",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-length": "273"
+}
+[2026-08-19T02:49:41.350Z] [AperturaPJ] response.body
+{
+  "expedientNumber": "B000000000013900",
+  "accounts": [
+    {
+      "accountId": 7441,
+      "accountNumber": "2007002197476",
+      "cci": "00320000700219747634",
+      "currencyCode": "SOLES"
+    }
+  ],
+  "person": {
+    "documentNumber": "20573046821",
+    "documentType": "2",
+    "customerID": "0062437348"
+  },
+  "servicePoint": {
+    "exists": false
+  }
+}
+[2026-08-19T02:49:41.862Z] [TrackingPJ] HTTP Status: 200
+[2026-08-19T02:49:41.864Z] [TrackingPJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:41.865Z] [TrackingPJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:41.867Z] [TrackingPJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:41.871Z] [TrackingPJ] response.headers
+{
+  "content-type": "application/json;charset=UTF-8",
+  "date": "Wed, 19 Aug 2026 02:49:32 GMT",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-store, no-cache, must-revalidate",
+  "x-content-type-options": "nosniff",
+  "x-trace-id": "123123-21312312-6654654",
+  "x-span-id": "8a1a5237231c46e1",
+  "processtraceid": "gen-123123-21312312-6654654",
+  "x-correlation-id": "7b40cba5-e8ce-4486-9242-ad6f70e3847f",
+  "x-frame-options": "DENY",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-length": "1223"
+}
+[2026-08-19T02:49:41.875Z] [TrackingPJ] response.body
+[
+  {
+    "generalStatus": "Se asignó abogado y está pendiente de atención",
+    "statusDescription": "El expediente está en la bandeja de poderes y pendiente de atención.",
+    "currency": "PEN",
+    "tariff": "DIGITAL",
+    "createdDate": "2026-08-19 02:49:32",
+    "openningDate": "2026-08-19",
+    "powerDate": "2026-08-19",
+    "tieDate": "",
+    "openningStatus": "CONFORME",
+    "powerStatus": "PENDIENTE",
+    "tieStatus": "NO ENVIADO",
+    "servicePointStatus": "",
+    "powerObservation": "",
+    "powerObservationCode": "",
+    "powerComments": "",
+    "statusCode": "STATUS_TRAY_003",
+    "trayName": "PODERES",
+    "trayStatus": "PENDIENTE",
+    "company": {
+      "cu": "0062437348",
+      "ruc": "20573046821",
+      "name": "ENGINEERING PROJECTS NETWORK E.I.R.L.",
+      "registrationNumber": "12345679",
+      "societyType": "EIRL",
+      "legalAddress": "AV MARIANO PASTOR NRO. 78 MZ 8 LT G2 INT. 3",
+      "email": "qainterbank01@yopmail.com",
+      "businessMagnitude": "6",
+      "address": {
+        "department": "LIMA",
+        "province": "LIMA",
+        "district": "LIMA",
+        "streetType": "AV",
+        "streetName": "MARIANO PASTOR",
+        "streetNumber": "78"
+      }
+    },
+    "legalRepresentatives": [
+      {
+        "cu": "0062437350",
+        "documentType": "DNI",
+        "documentNumber": "40975869",
+        "name": "ALEX MIGUEL",
+        "lastName": "SALAZAR ROMERO",
+        "email": "qainterbank01@yopmail.com",
+        "phone": "958595853"
+      }
+    ],
+    "accounts": [
+      {
+        "currencyCode": "PEN",
+        "accountNumber": "2007002197476"
+      }
+    ]
+  }
+]
+[2026-08-19T02:49:41.893Z] [FlujoCompletoPJ] Inicio de flujo constituida migrado desde PJ.jmx
+[2026-08-19T02:49:42.108Z] [TokenPJ] HTTP Status: 200
+[2026-08-19T02:49:42.111Z] [TokenPJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:42.113Z] [TokenPJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:42.115Z] [TokenPJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:42.116Z] [TokenPJ] response.headers
+{
+  "content-type": "application/json",
+  "date": "Wed, 19 Aug 2026 02:49:33 GMT",
+  "server": "nginx",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-cache, no-store, max-age=0, must-revalidate, no-cache",
+  "expires": "0",
+  "pragma": "no-cache",
+  "transfer-encoding": "chunked",
+  "x-xss-protection": "0",
+  "x-frame-options": "DENY",
+  "x-trace-id": "b6737af727234f47837cb1cfc9e4a03b",
+  "x-span-id": "9078a11ecc7642dc",
+  "x-content-type-options": "nosniff",
+  "processtraceid": "gen-b6737af727234f47837cb1cfc9e4a03b"
+}
+[2026-08-19T02:49:42.119Z] [TokenPJ] response.body
+{
+  "access_token": "eyJraWQiOiJhYjEyYjUxZC1lNzIxLTQ2ZTYtYTExMS02N2ZiMzEwOTM2OGMiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJCQ1YiLCJhdWQiOiJCQ1YiLCJuYmYiOjE3ODcxMDc3NjQsInNjb3BlIjpbImFsbCJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJleHAiOjE3ODcxMzY1NjQsImlhdCI6MTc4NzEwNzc2NCwianRpIjoiYzc4NWYwNmYtZjRkMC00YWYzLWI3MGUtNWFlYzJlODBmZjIwIiwiYXV0aG9yaXRpZXMiOlsiQUxMIl0sImNsaWVudF9pZCI6IkJDViJ9.Chphjwe7lZy6VR4GsoFYUYbeRpAZ2yrX4DVJxR7tNd1_FL9Lpt-nyIvPo8yIGg5mDw2yjzuYzK7p3_2mS4uIBec7myCLLEUckkCS9iA16e3ZIBscEgTpDOub4saoUCAa24ngUg2nXBeQ6FxXV5BZJNNb2j3_0OiGsVhqUYtEhab8QDcoisUqrzkiohBb7TXrYGSn8pViGsWZAW9YL22MZEzc5Zn34l5zJk8zmyro5Oe-pr6yvPlPMBawPMMow3a6Z8Ze-WXkxdYpCu19wjx85lFExlAGZvlbwjO-5PQbfaNeHSpre2cAxwFNZv6sZQCbmk0mBzmaZqgm8kAJmKGTgA",
+  "token_type": "Bearer",
+  "expires_in": "28800"
+}
+[2026-08-19T02:49:42.747Z] [CompliancePJ] HTTP Status: 200
+[2026-08-19T02:49:42.750Z] [CompliancePJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:42.751Z] [CompliancePJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:42.753Z] [CompliancePJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:42.755Z] [CompliancePJ] response.headers
+{
+  "content-type": "application/json;charset=UTF-8",
+  "date": "Wed, 19 Aug 2026 02:49:33 GMT",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-store, no-cache, must-revalidate",
+  "x-content-type-options": "nosniff",
+  "x-trace-id": "b6735999dc71f5c23a66a3fc6079ca9b",
+  "x-span-id": "a8252a9668b14896",
+  "processtraceid": "gen-b6735999dc71f5c23a66a3fc6079ca9b",
+  "x-correlation-id": "7a3835fc-ec23-4aa6-be88-93122754fe9e",
+  "x-frame-options": "DENY",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-length": "144"
+}
+[2026-08-19T02:49:42.759Z] [CompliancePJ] response.body
+{
+  "expedientNumber": "B000000000013901",
+  "status": "COMPLETED",
+  "statusDetail": "All required data has been successfully validated",
+  "requiredData": []
+}
+[2026-08-19T02:49:46.719Z] [AperturaPJ] HTTP Status: 500
+[2026-08-19T02:49:46.722Z] [AperturaPJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:46.724Z] [AperturaPJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:46.725Z] [AperturaPJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:46.727Z] [AperturaPJ] response.headers
+{
+  "content-type": "application/json;charset=UTF-8",
+  "date": "Wed, 19 Aug 2026 02:49:37 GMT",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-store, no-cache, must-revalidate",
+  "x-content-type-options": "nosniff",
+  "x-trace-id": "a7bfb946e3874c4eac83a9f71ebb5ba4",
+  "x-span-id": "e4824ff6d32145d0",
+  "processtraceid": "gen-a7bfb946e3874c4eac83a9f71ebb5ba4",
+  "x-correlation-id": "7d689ac9-f764-4e5a-8540-9753d734750a",
+  "x-frame-options": "DENY",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-length": "376"
+}
+[2026-08-19T02:49:46.732Z] [AperturaPJ] response.body
+{
+  "type": "https://api.bcv.interbank.pe/problems/ibk-sys-0500",
+  "title": "Internal Server Error",
+  "status": 500,
+  "detail": "An unexpected error occurred. Please contact support quoting the traceId.",
+  "timestamp": "2026-08-19T02:49:37.697267266Z",
+  "traceId": "a7bfb946e3874c4eac83a9f71ebb5ba4",
+  "errorCode": "IBK-SYS-0500",
+  "context": {
+    "origin": "LOCAL",
+    "exceptionType": "NullPointerException"
+  }
+}
+[2026-08-19T02:49:47.141Z] [TrackingPJ] HTTP Status: 200
+[2026-08-19T02:49:47.143Z] [TrackingPJ] response.header.busresponsemessage: 
+[2026-08-19T02:49:47.145Z] [TrackingPJ] response.header.srvresponsecode: 
+[2026-08-19T02:49:47.147Z] [TrackingPJ] response.header.srvresponsemessage: 
+[2026-08-19T02:49:47.149Z] [TrackingPJ] response.headers
+{
+  "content-type": "application/json;charset=UTF-8",
+  "date": "Wed, 19 Aug 2026 02:49:38 GMT",
+  "access-control-expose-headers": "Allow-Continue",
+  "cache-control": "no-store, no-cache, must-revalidate",
+  "x-content-type-options": "nosniff",
+  "x-trace-id": "123123-21312312-6654654",
+  "x-span-id": "2fe7d466ab864869",
+  "processtraceid": "gen-123123-21312312-6654654",
+  "x-correlation-id": "b852e74f-592d-47bb-a35b-ecdfdbce7a2d",
+  "x-frame-options": "DENY",
+  "strict-transport-security": "max-age=31536000; includeSubDomains",
+  "content-length": "2"
+}
+[2026-08-19T02:49:47.154Z] [TrackingPJ] response.body
+[]
+[2026-08-19T02:49:47.165Z] [PerformancePJ] Resumen ejecutivo
+{
+  "flowType": "PJ_CONSTITUIDA",
+  "testType": "CARGA",
+  "decision": "NO_APTO",
+  "tps": 0.07,
+  "totalIterations": 2,
+  "errorRate": 0.5,
+  "avgMs": 7405,
+  "p95Ms": 9531,
+  "p99Ms": 9531,
+  "stdDevMs": 2127
+}
