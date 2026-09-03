@@ -1,5 +1,6 @@
 PN
 para el flujo de PN primero se necesita el Token, luego Compliance, luego initial-validation y por ultimo business-account
+1 copliance
 curl --request POST \
   --url https://eu2-ibk-apm-stg-ext-001.azure-api.net/bcv-bacc-party-lifecycle-management/v1/business-account/initial-validation \
   --header 'Cookie: __cf_bm=ybRlrcCQe272J4BtNAPJlwLYTqOR_PBxHvAPnjhiUDo-1773245387-1.0.1.1-HJip2dhMyZFNf1h0ykjIcQF.yx17qmGHhmLiyfqEXKqCTZcS1pv1XV9wgZxcl21VLmHLl6YCH_YQ6r2hMw7TdJL7du6L3HYDQIkdw5kGiSY' \
@@ -20,22 +21,90 @@ curl --request POST \
   ]
 }'
 
+2 Apertura
 curl --request POST \
-  --url https://eu2-ibk-apm-stg-ext-001.azure-api.net/bcv-bacc-party-lifecycle-management/v1/business-account/initial-validation \
+  --url https://eu2-ibk-apm-stg-ext-001.azure-api.net/bcv-bacc-party-lifecycle-management/v1/business-account \
   --header 'Cookie: __cf_bm=ybRlrcCQe272J4BtNAPJlwLYTqOR_PBxHvAPnjhiUDo-1773245387-1.0.1.1-HJip2dhMyZFNf1h0ykjIcQF.yx17qmGHhmLiyfqEXKqCTZcS1pv1XV9wgZxcl21VLmHLl6YCH_YQ6r2hMw7TdJL7du6L3HYDQIkdw5kGiSY' \
   --header 'authorization: {{bcv_stg_access_token}}' \
   --header 'content-type: application/json' \
   --header 'ocp-apim-subscription-key: 0e62f13879b145489c7be8c9d21ccc97' \
-  --header 'x-trace-id: b6735999dc71f5c23a66a3fc6079ca9b' \
   --data '{
-  "store": {
-	"storeCode": "898"
+  "expedientNumber": "B000000000002076",
+  "person": {
+    "type": "NATURAL_PERSON",
+    "documentType": "1",
+    "documentNumber": "45342123",
+  //  "businessDocumentType": "",
+  //  "businessDocumentNumber": "",
+    "firstName": "Miguel",
+    "middleName": "Angel",
+    "lastName": "Falcon",
+    "motherLastName": "Falcon",
+    "birthDate": "1980-12-12",
+    "gender": "M",
+    "maritalStatus": "S",
+    "sectorCode": "03",
+    "subSectorCode": "0301",
+    "nationalityCode": "0",
+    "birthCountryCode": "4028",
+    "residentCountryCode": "4028",
+    "nationalityCountryCode": "4028",
+    "constituted": "SI",
+    "companyName": "SYNOPSIS",
+    "ocupationCode": "PRF",
+    "ciiu": "2023",
+    "email": {
+      "type": "P",
+      "value": "aescalanteo@outlook.com"
+    },
+    "phone": {
+      "type": "C",
+      "value": "999456145",
+      "carrier": "CLARO"
+    },
+    "address": {
+      "department": "LIMA",
+      "province": "LIMA",
+      "district": "COMAS",
+      "streetType": "AV",
+      "streetName": "Javier Comas",
+      "streetNumber": "17",
+      "blockIdentification": "8",
+      "lotNumber": "G2",
+      "insideNumber": 3,
+      "urbanization": "AAAAA",
+      "landmark": "VECINDARIO PARQUE"
+    },
+    "ldpd": {
+      "accept": true
+    },
+    "isPep": false,
+    "bpi": {
+      "type": "PERSONAS"
+    },
+    "authentications": [
+      "BIOMETRIA",
+      "OTP_SMS",
+      "OTP_CORREO"
+    ]
   },
-  "requestType": "NATURAL_PERSON",
-  "legalRepresentatives": [
-	{
-	  "documentType": "1",
-	  "documentNumber": "45342123"
-	}
-  ]
+  "account": {
+    "currencyCode": [
+      "PEN"
+    ],
+    "tariff": "DIGITAL"
+  },
+  "store": {
+    "storeCode": "898"
+  },
+  "configuration": {
+    "agency": {
+      "code": "898",
+      "name": "AGENCIA 898"
+    },
+    "device": {
+      "type": "MOVIL",
+      "deviceID": "172.18.48.72"
+    }
+  }
 }'
